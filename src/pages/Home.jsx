@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import ProductCard from "../components/ProductCard";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -44,7 +44,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get("/products");
+        const res = await API.get("/products");
         setProducts(res.data);
         setFilteredProducts(res.data);
       } catch (error) {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -16,7 +16,7 @@ export default function Register() {
 
     try {
       // ✅ Correct API endpoint
-      const res = await api.post("/users/register", { name, email, password });
+      const res = await API.post("/users/register", { name, email, password });
 
       // ✅ Save token (optional, if you want to auto-login)
       localStorage.setItem("token", res.data.token);

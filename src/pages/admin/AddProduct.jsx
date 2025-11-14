@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../../api/axiosInstance";
+import API from "../../api/axiosInstance";
 import { toast } from "react-toastify";
 
 export default function AddProduct() {
@@ -24,7 +24,7 @@ export default function AddProduct() {
     try {
       setUploading(true);
 
-      const { data } = await api.post("/upload", formData, {
+      const { data } = await API.post("/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -54,7 +54,7 @@ export default function AddProduct() {
     try {
       setCreating(true);
 
-      await api.post("/products", {
+      await API.post("/products", {
         name,
         description,
         price: Number(price),

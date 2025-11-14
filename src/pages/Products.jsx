@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import ProductCard from "../components/ProductCard";
 
 export default function Products() {
@@ -9,7 +9,7 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await api.get("/products"); // FIXED
+        const res = await API.get("/products"); // FIXED
         console.log("Fetched products:", res.data);
         setProducts(res.data);
       } catch (error) {

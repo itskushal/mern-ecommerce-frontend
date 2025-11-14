@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:5000/api", // correct
+const API = axios.create({
+  baseURL: "https://mern-backend-kpap.onrender.com/api",
 });
 
-api.interceptors.request.use((config) => {
+API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -12,4 +12,4 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-export default api;
+export default API;

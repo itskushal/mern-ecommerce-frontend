@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -15,7 +15,7 @@ export default function Login() {
 
     try {
       // ✅ Correct API URL (now aligned with backend)
-      const res = await api.post("/users/login", { email, password });
+      const res = await API.post("/users/login", { email, password });
 
       // ✅ Show success toast
       toast.success("Login Successful ✅");

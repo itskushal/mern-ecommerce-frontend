@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import { toast } from "react-toastify";
 
 export default function Profile() {
@@ -9,7 +9,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await api.get("/users/profile"); // ✅ Correct endpoint
+        const res = await API.get("/users/profile"); // ✅ Correct endpoint
         setUser(res.data);
       } catch (error) {
         console.error("Profile fetch error:", error);

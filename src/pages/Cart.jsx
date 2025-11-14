@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Trash2, Plus, Minus, ShoppingCart } from "lucide-react";
-import api from "../api/axiosInstance";
+import API from "../api/axiosInstance";
 import { toast } from "react-toastify";
 
 export default function Cart() {
@@ -83,8 +83,8 @@ export default function Cart() {
         image: item.image,
       }));
 
-      const res = await api.post(
-        "/api/orders",
+      const res = await API.post(
+        "/API/orders",
         {
           orderItems,
           totalAmount: total,

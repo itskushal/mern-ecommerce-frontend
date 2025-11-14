@@ -8,7 +8,7 @@ export default function AdminProducts() {
   // ✅ Load all products from backend
   const loadProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get("http://localhost:5000/API/products");
       setProducts(res.data);
     } catch (error) {
       console.log("Failed to load products:", error);
@@ -27,7 +27,7 @@ export default function AdminProducts() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`http://localhost:5000/API/products/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

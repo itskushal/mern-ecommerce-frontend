@@ -11,7 +11,7 @@ export default function EditProduct() {
   }, []);
 
   const loadProduct = async () => {
-    const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+    const res = await axios.get(`http://localhost:5000/API/products/${id}`);
     setProduct(res.data);
   };
 
@@ -21,7 +21,7 @@ export default function EditProduct() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/api/products/${id}`, product);
+    await axios.put(`http://localhost:5000/API/products/${id}`, product);
     alert("Updated!");
   };
 
